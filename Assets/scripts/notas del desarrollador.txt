@@ -1,0 +1,4 @@
+Ups... Me olvidé de decir esto. Si quieren ocultar el mouse durante el play mode, agreguen en el método Start estas dos líneas:
+        Cursor.visible = false;  //oculta el cursor (es sólo algo visual)
+        Cursor.lockState = CursorLockMode.Locked;  //lo bloquea (que no se mueva)
+Para volver a mostrarlo, presionen ESC.
