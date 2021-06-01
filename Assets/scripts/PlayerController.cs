@@ -5,16 +5,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float horizontalMove;
-    public float verticalMove;
-    public CharacterController player;
+    Rigidbody rb;
+    Vector2 inputMov;
+    public float velCamina = 10f;
+    public float velCorre = 20f;
 
-    public float playerSpeed;
  
     void Start()
     {
 
-        player = GetComponent<CharacterController>();
+      rb = GetComponent<Rigidbody>();
 
 
     }
@@ -23,15 +23,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        horizontalMove = Input.GetAxis("Horizontal");
-        verticalMove = Input.GetAxis("Vertical");
+        inputMov.x = Input.GetAxis("Horizontal");
+        inputMov.y = Input.GetAxis("Vertical");
+        
     }
 
 
 
     private void FixedUpdate()
     {
-        player.Move(new Vector3(horizontalMove, 0, verticalMove)* playerSpeed * Time.deltaTime);
+      
+      float vel = Input.GetKey(KeyCode.LeftShift) ? velCorre : velCamina;
+
+      rb.velocity = transform.forward * vel * inputMov.y + transform.right * vel * inputMov.x;
+      
+      
     }
 
     
