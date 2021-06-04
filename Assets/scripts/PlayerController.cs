@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public Camera FPSCamara;
     Rigidbody rb;
     Vector2 inputMov;
+    public GameObject puerta;
 
     public float velCamina = 10f;
     public float velCorre = 20f;
@@ -60,5 +61,22 @@ public class PlayerController : MonoBehaviour
             + transform.right * vel * inputMov.x;
 
     }
+
+    void OnTriggerStay(Collider obj)
+    {
+            
+        if (obj.tag == "Activador_puerta")
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse0))
+            {
+                puerta.GetComponent<Animation>().Play("Abre_Puerta");
+            }
+        }
+
+
+    }
+
+
+
 
 }

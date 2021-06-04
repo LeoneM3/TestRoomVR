@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Puerta
+  - Activador_puerta
+  - Activador_silla
+  - silla
   layers:
   - Default
   - TransparentFX
