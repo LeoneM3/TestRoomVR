@@ -19,11 +19,24 @@ public class PlayerController : MonoBehaviour
     float h;
     float v;
 
+    //animacion
+
+    private Animator anim;
+
+
 
 
     void Start()
     {
+        //logica corporal 
         rb = GetComponent<Rigidbody>();
+
+
+        // animaciones
+
+        anim = GetComponent<Animator>();
+
+
     }
     
 
