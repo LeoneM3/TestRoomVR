@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Puertas : MonoBehaviour
+public class Puerta1 : MonoBehaviour
 {
     public float speed = 1;
     public float angle;
@@ -31,7 +31,7 @@ public class Puertas : MonoBehaviour
             direcction = Vector3.up;
             abrir = true;
         }
-        else if (Input.GetButtonDown("Fire1") && abrir == true && puedeAbrir == true)
+        else if(Input.GetButtonDown("Fire1") && abrir == true && puedeAbrir == true)
         {
             angle = 0;
             direcction = Vector3.down;
@@ -56,4 +56,5 @@ public class Puertas : MonoBehaviour
             puedeAbrir = false;
         }
     }
+
 }
