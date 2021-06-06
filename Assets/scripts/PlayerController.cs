@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     //animacion
 
-    private Animator anim;
+   
 
 
 
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
         // animaciones
 
-        anim = GetComponent<Animator>();
+        
 
 
     }
@@ -64,9 +64,7 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
         transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
 
-        anim.SetFloat("VelX", x);
-        anim.SetFloat("VelY", y);
-
+   
 
     }
 
