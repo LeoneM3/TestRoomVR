@@ -6,7 +6,7 @@ public class wp_Actor : MonoBehaviour
 {
 
 
-    float speed = 5.0f;
+    float speed = 2.0f;
 
     public Transform target;
 
