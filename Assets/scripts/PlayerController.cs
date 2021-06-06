@@ -5,17 +5,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public Camera FPSCamara;
+   
+
+    //movimiento 
     Rigidbody rb;
-    Vector2 inputMov;
+    public float velocidadMovimiento = 2.0f;
+    public float velocidadRotacion = 200.0f;
+    public float x, y;
 
-    public float velCamina = 10f;
-    public float velCorre = 20f;
 
 
+
+    //camara
     public float horizontalSpeed;
     public float verticalSpeed;
-
+    public Camera FPSCamara;
     float h;
     float v;
 
@@ -54,25 +58,19 @@ public class PlayerController : MonoBehaviour
 
         //movimiento del personaje
 
-        inputMov.x = Input.GetAxis("Horizontal");
-        inputMov.y = Input.GetAxis("Vertical");
+        x = Input.GetAxis("Horizontal");
+        y = Input.GetAxis("Vertical");
 
+        transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
+        transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
 
+        anim.SetFloat("VelX", x);
+        anim.SetFloat("VelY", y);
 
-
-   }
-
-
-   private void FixedUpdate()
-    {
-        //controladores
-        float vel = Input.GetKey(KeyCode.LeftShift) ? velCorre : velCamina;
-
-         rb.velocity =
-            transform.forward * vel * inputMov.y
-            + transform.right * vel * inputMov.x;
 
     }
+
+
 
   
 
