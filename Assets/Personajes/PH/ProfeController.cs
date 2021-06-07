@@ -41,14 +41,14 @@ public class ProfeController : MonoBehaviour
             Profesor.destination = wayPoints[nextPoint].position;
             timeTrans = 0;
             time = 0;
-            ProfesorAnim.SetBool("Caminar", true);
+            ProfesorAnim.SetBool("Walk", true);
         }
 
         int distance = Mathf.RoundToInt(Vector3.Distance(transform.position, wayPoints[nextPoint].position));
 
         if(distance == 0)
         {
-            ProfesorAnim.SetBool("Caminar", false);
+            ProfesorAnim.SetBool("Walk", false);
         }
     }
 
