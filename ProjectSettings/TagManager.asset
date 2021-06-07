@@ -9,6 +9,7 @@ TagManager:
   - Activador_silla
   - silla
   - WayPoint
+  - Profesor
   layers:
   - Default
   - TransparentFX
