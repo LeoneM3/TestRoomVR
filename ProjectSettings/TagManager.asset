@@ -10,6 +10,7 @@ TagManager:
   - silla
   - WayPoint
   - Profesor
+  - Escritorio
   layers:
   - Default
   - TransparentFX
